@@ -1,37 +1,37 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $("#emailMandatory").hide();
     $("#otherMediaChannel").hide();
     $("#submit").hide();
-}); 
+});
 
 $(document).on("load change", function () {
     let valueE = $("#email").val();         //Email
     let valueV = $("#firstName").val();     //Vorname
     let valueN = $("#lastName").val();      //Nachname
     let valueMedia = $("#mediaChannelSelect").val();
-    let news= $("#newsletter").prop('checked');  
+    let news = $("#newsletter").prop('checked');
 
-    if (valueE=="" && news==true){
+    if (valueE == "" && news == true) {
         $("#emailMandatory").show();
         $("#submit").hide();
-    }else{
+    } else {
         $("#emailMandatory").hide();
     }
-    if (valueN != ""){
+    if (valueN != "") {
         $("#lastNameMandatory").hide();
-    }else{
+    } else {
         $("#submit").hide();
         $("#lastNameMandatory").show();
     }
-    if (valueV != ""){
+    if (valueV != "") {
         $("#firstNameMandatory").hide();
-    }else{
+    } else {
         $("#submit").hide();
         $("#firstNameMandatory").show();
     }
-    if(valueMedia =="Other") $("#otherMediaChannel").show();
+    if (valueMedia == "Other") $("#otherMediaChannel").show();
     //Submit
-    if(valueN !="" && valueV!="" && news==true && valueE!="") $("#submit").show();
-    if(valueN !="" && valueV!="" && news==false) $("#submit").show();
-    
+    if (valueN != "" && valueV != "" && news == true && valueE != "") $("#submit").show();
+    if (valueN != "" && valueV != "" && news == false) $("#submit").show();
+
 });

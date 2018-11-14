@@ -8,6 +8,7 @@ $(document).on("load change", function () {
     var valueV = $("#firstName").val(); //Vorname
     var valueN = $("#lastName").val(); //Nachname
     var valueMedia = $("#mediaChannelSelect").val();
+    
     var news = $("#newsletter").prop('checked');
     if (valueE == "" && news == true) {
         $("#emailMandatory").show();
